@@ -1,0 +1,67 @@
+﻿@model List<Person>
+<button type="button" id="LoadDataButton" class="btn btn-info" style="margin-top: 20px;">Ucitati podatke</button>
+
+<div id="LoadDataView">
+
+</div>
+
+@section Scripts{
+
+    <script>
+
+    /**
+    * This function is used to call the model from creating a new person.
+    */
+    $(document).on("click", "#LoadDataButton", function (event) {
+
+        var url = "@Url.Action("LoadDataTable", "Zadatak")";
+
+        $("#LoadDataView").load(url);
+
+    });
+
+
+    @*$('#LoadDataButton').click(function () {
+
+        var url = "@Url.Action("LoadDataTable", "Zadatak")";
+
+        $("#LoadDataView").load(url, function () {
+            $("#LoadDataModal").modal("show");
+        });
+    });*@
+
+    /**
+    * This function is called to validate the CreateOrEditModal.
+    */
+    $("#LoadDataView").on("click", "#SaveList", function (event) {
+
+        $("#LoadDataForm").removeData('validator');
+        $("#LoadDataForm").removeData('unobtrusiveValidation');
+        $.validator.unobtrusive.parse("#LoadDataForm");
+
+        $("#LoadDataForm").validate();
+
+        if ($("#LoadDataForm").valid()) {
+            var test = "FUCK";
+        }
+
+        var url = "@Url.Action("LoadDataTable", "Zadatak")";
+        var sourcearray = JSON.parse('@Html.Raw(Json.Serialize(Model))');
+
+        @*$.ajax({
+            url: url,
+            method: "POST",
+            data: JSON.stringify(sourcearray),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (html) {
+
+                var urlIndex = "@Url.Action("Index", "Zadatak")";
+                window.location.href = urlIndex;
+            }
+        });*@
+
+    });
+
+    </script>
+}

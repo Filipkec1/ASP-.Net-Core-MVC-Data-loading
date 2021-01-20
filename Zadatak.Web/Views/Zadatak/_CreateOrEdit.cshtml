@@ -1,0 +1,61 @@
+﻿@model Person
+<div class="modal fade" id="CreateOrEditModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+
+                @if (Model == null)
+                {
+                    <h4 class="modal-title">Nova osoba</h4>
+                }
+                else
+                {
+                    <h4 class="modal-title">Uredi osobu</h4>
+                }
+            </div>
+            <div class="modal-body">
+                <form asp-controller="Zadatak" id="CreateOrEditModalForm">
+                    <div class="form-group">
+                        <label class="control-label">Ime osobe</label>
+                        <input asp-for="FirstName" class="form-control" id="FirstName" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Prezime osobe</label>
+                        <input asp-for="LastName" class="form-control" id="LastName" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Naziv grada</label>
+                        <input asp-for="CityName" class="form-control" id="CityName" />
+                        <span asp-validation-for="CityName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Poštanski broj</label>
+                        <input asp-for="PostalCode" class="form-control" id="PostalCode" onkeypress="return isNumberKey(event)" />
+                        <span asp-validation-for="PostalCode" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Mobilni broj</label>
+                        <input asp-for="MobileNumber" class="form-control" id="MobileNumber" onkeypress="return isNumberKey(event)" />
+                        <span asp-validation-for="MobileNumber" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="button" value="Pospremi osobu" class="btn btn-default" id="SavePerson" />
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="ClosePerson" class="btn btn-default" data-dismiss="modal">Zatvori</button>
+            </div>
+        </div>
+
+    </div>
+</div>

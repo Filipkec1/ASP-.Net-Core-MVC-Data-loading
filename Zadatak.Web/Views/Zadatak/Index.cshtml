@@ -1,0 +1,173 @@
+﻿@{
+    ViewData["Title"] = "Pocetna";
+}
+
+@*<link rel="stylesheet" href="/vendors/formvalidation/dist/css/formValidation.min.css">
+<style>
+    td .fv-plugins-icon {
+        right: 10px;
+        top: 10px;
+    }
+</style>*@
+
+<button type="button" id="CreateButton" class="btn btn-success" style="margin-top: 20px;">Nova osoba</button>
+
+<div class="row">
+    <div class="col-md-12">
+        <a asp-action="LoadData" class="btn btn-info" style="margin-top: 20px;">Ucitaj iz datoteke</a>
+    </div>
+</div>
+
+<div id="CreateEditView">
+
+</div>
+
+<h1>Glavna tablica - ono što se nalazi u bazi podataka</h1>
+
+<div id="TablePeopleView">
+
+</div>
+
+@section Scripts{
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+
+        /**
+        * This function dynamically changes the table with all the people.
+        * It takes in a method name and then executes it.
+        * It uses Ajax to to this.
+        *
+        * @@param url is the method witch is doing the Ajax call.
+        */
+        function AjaxCall(url) {
+            $("#TablePeople").replaceWith(
+                $.ajax({
+                    url: url,
+                    method: "POST",
+                    success: function (html) {
+                        $("#TablePeopleView").html(html);
+                    }
+                }));
+        }
+
+        /**
+        * This function is called on first page load.
+        * It is used to call the table with people.
+        */
+        $(document).ready(function () {
+            AjaxCall("@Url.Action("IndexAjax")");
+        });
+
+        /**
+         * This function is used to call the model from creating a new person.
+         */
+        $('#CreateButton').click(function () {
+
+            var url = "@Url.Action("Create","Zadatak")";
+
+            $("#CreateEditView").load(url, function () {
+                $("#CreateOrEditModal").modal("show");
+            });
+        });
+
+        /**
+         * This function is called to validate the CreateOrEditModal.
+         */
+        $("#CreateEditView").on("click", "#SavePerson", function (event) {
+
+            $("#CreateOrEditModalForm").removeData('validator');
+            $("#CreateOrEditModalForm").removeData('unobtrusiveValidation');
+            $.validator.unobtrusive.parse("#CreateOrEditModalForm");
+            $("#CreateOrEditModalForm").validate();
+
+            if ($("#CreateOrEditModalForm").valid()) {
+                $("#CreateOrEditModal").modal("hide");
+
+                $("#TablePeople").replaceWith(
+                    $.ajax({
+                        url:"@Url.Action("Create", "Zadatak")",
+                        method: "POST",
+                        data: $("#CreateOrEditModalForm").serialize(),
+                        success: function (html) {
+                            $("#TablePeopleView").html(html);
+                        }
+                    })
+                );
+
+            }
+
+
+        });
+
+        /**
+         * This function is called when a person is being edited.
+         */
+        $("#TablePeopleView").on("click", ".EditButton", function (event) {
+
+            var url = $(this).data("url");
+
+            $("#CreateEditView").load(url, function () {
+                $("#CreateOrEditModal").modal("show");
+            });
+        });
+
+        /**
+         * This function is called when we want to delete a person from the database.
+         */
+        $("#TablePeopleView").on("click", ".DeleteButton", function (event) {
+
+            AjaxCall($(this).data("url"));
+            //location.reload();
+        });
+
+        /**
+         * This function is used to call the model from creating a new person.
+         */
+        @*$('#LoadDataButton').click(function () {
+
+            var url = "@Url.Action("LoadData", "Zadatak")";
+
+            $("#LoadDataView").load(url, function () {
+                $("#LoadDataModal").modal("show");
+            });
+        });*@
+
+       /**
+         * This function is called to validate the CreateOrEditModal.
+         */
+        $("#LoadDataView").on("click", "#SaveList", function (event) {
+
+            $("#LoadDataForm").removeData('validator');
+            $("#LoadDataForm").removeData('unobtrusiveValidation');
+            $.validator.unobtrusive.parse("#LoadDataForm");
+
+            $("#LoadDataForm").validate({
+
+            });
+
+            if ($("#LoadDataForm").valid()) {
+                $("#LoadDataModal").modal("hide");
+            }
+
+
+            var test = "TEST";
+
+            AjaxCall("@Url.Action("IndexAjax")");
+        });
+
+        /**
+         * This function is used to only input numbers into text boxes.
+         *
+         * @@param evt is the key witch is being pressed.
+         */
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : evt.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+
+    </script>
+}

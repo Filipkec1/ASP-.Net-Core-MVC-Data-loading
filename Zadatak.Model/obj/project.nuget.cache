@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "BKbxkDxHiC0ENJ8YI6dfWrzmlVvASJSO0CYMMe3z7PoGZerGNcrH523uZOXZN191M4rLrtDKGoob8MRGjc1zyA==",
+  "success": true,
+  "projectFilePath": "C:\\Span\\Zadatak.Model\\Zadatak.Model.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Filip-Red\\.nuget\\packages\\microsoft.netcore.app\\2.1.0\\microsoft.netcore.app.2.1.0.nupkg.sha512",
+    "C:\\Users\\Filip-Red\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.1.0\\microsoft.netcore.dotnetapphost.2.1.0.nupkg.sha512",
+    "C:\\Users\\Filip-Red\\.nuget\\packages\\microsoft.netcore.dotnethostpolicy\\2.1.0\\microsoft.netcore.dotnethostpolicy.2.1.0.nupkg.sha512",
+    "C:\\Users\\Filip-Red\\.nuget\\packages\\microsoft.netcore.dotnethostresolver\\2.1.0\\microsoft.netcore.dotnethostresolver.2.1.0.nupkg.sha512",
+    "C:\\Users\\Filip-Red\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.0\\microsoft.netcore.platforms.2.1.0.nupkg.sha512",
+    "C:\\Users\\Filip-Red\\.nuget\\packages\\microsoft.netcore.targets\\2.1.0\\microsoft.netcore.targets.2.1.0.nupkg.sha512",
+    "C:\\Users\\Filip-Red\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

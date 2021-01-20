@@ -1,0 +1,15 @@
+C:\Span\Zadatak.DAL\bin\Debug\netcoreapp2.1\Zadatak.DAL.deps.json
+C:\Span\Zadatak.DAL\bin\Debug\netcoreapp2.1\Zadatak.DAL.dll
+C:\Span\Zadatak.DAL\bin\Debug\netcoreapp2.1\Zadatak.DAL.pdb
+C:\Span\Zadatak.DAL\obj\Debug\netcoreapp2.1\Zadatak.DAL.csprojAssemblyReference.cache
+C:\Span\Zadatak.DAL\obj\Debug\netcoreapp2.1\Zadatak.DAL.AssemblyInfoInputs.cache
+C:\Span\Zadatak.DAL\obj\Debug\netcoreapp2.1\Zadatak.DAL.AssemblyInfo.cs
+C:\Span\Zadatak.DAL\obj\Debug\netcoreapp2.1\Zadatak.DAL.dll
+C:\Span\Zadatak.DAL\obj\Debug\netcoreapp2.1\Zadatak.DAL.pdb
+C:\Span\Zadatak.DAL\obj\Debug\netcoreapp2.1\Zadatak.DAL.csproj.CoreCompileInputs.cache
+C:\Span\Zadatak.DAL\bin\Debug\netcoreapp2.1\Zadatak.DAL.runtimeconfig.json
+C:\Span\Zadatak.DAL\bin\Debug\netcoreapp2.1\Zadatak.DAL.runtimeconfig.dev.json
+C:\Span\Zadatak.DAL\bin\Debug\netcoreapp2.1\Zadatak.Model.dll
+C:\Span\Zadatak.DAL\bin\Debug\netcoreapp2.1\Zadatak.Model.pdb
+C:\Span\Zadatak.DAL\obj\Debug\netcoreapp2.1\Zadatak.DAL.csproj.CopyComplete
+C:\Span\Zadatak.DAL\obj\Debug\netcoreapp2.1\Zadatak.DAL.genruntimeconfig.cache

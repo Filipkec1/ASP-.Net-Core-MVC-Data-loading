@@ -1,0 +1,9 @@
+C:\Span\Zadatak.Model\bin\Debug\netcoreapp2.1\Zadatak.Model.deps.json
+C:\Span\Zadatak.Model\bin\Debug\netcoreapp2.1\Zadatak.Model.dll
+C:\Span\Zadatak.Model\bin\Debug\netcoreapp2.1\Zadatak.Model.pdb
+C:\Span\Zadatak.Model\obj\Debug\netcoreapp2.1\Zadatak.Model.AssemblyInfoInputs.cache
+C:\Span\Zadatak.Model\obj\Debug\netcoreapp2.1\Zadatak.Model.AssemblyInfo.cs
+C:\Span\Zadatak.Model\obj\Debug\netcoreapp2.1\Zadatak.Model.csproj.CoreCompileInputs.cache
+C:\Span\Zadatak.Model\obj\Debug\netcoreapp2.1\Zadatak.Model.dll
+C:\Span\Zadatak.Model\obj\Debug\netcoreapp2.1\Zadatak.Model.pdb
+C:\Span\Zadatak.Model\obj\Debug\netcoreapp2.1\Zadatak.Model.csprojAssemblyReference.cache

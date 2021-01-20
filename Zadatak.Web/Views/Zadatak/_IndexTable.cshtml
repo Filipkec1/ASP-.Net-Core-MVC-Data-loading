@@ -1,0 +1,39 @@
+﻿@model List<Person>
+
+<table style="margin-top: 20px;" class="table table-condensed" id="TablePeople">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Grad</th>
+            <th>Postanski broj</th>
+            <th>Broj mobitela</th>
+            <th> </th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.CityName</td>
+                <td>@item.PostalCode</td>
+                <td>@item.MobileNumber</td>
+                <td>
+                    <button type="button" class="btn btn-toolbar EditButton" data-url="@Url.Action("Edit","Zadatak")/@item.ID">
+                        Uredi osobu
+                    </button>
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-danger DeleteButton" data-url="@Url.Action("Delete","Zadatak")/@item.ID">
+                        Obriši osobu
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
